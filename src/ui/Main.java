@@ -20,14 +20,8 @@ public class Main {
 		towers[TOWER_2] = 0;
 		towers[TOWER_3] = 0;
 		
-		/**
-		System.out.print(towers[TOWER_1]);
-		System.out.print(towers[TOWER_2]);
-		System.out.print(towers[TOWER_3]);
-		System.out.println();*/
-		
-		info += towers[0];
-		info += towers[1];
+		info += towers[0] + " ";
+		info += towers[1] + " ";
 		info += towers[2] + "\n";
 		hanoi(n, 0, 1, 2, towers);
 	}
@@ -48,6 +42,7 @@ public class Main {
         	amountDisks = br.readLine();
         	intAmountDisks = Integer.parseInt(amountDisks);
         	hanoiTower(intAmountDisks);
+        	info += "\n";
         }
         
         System.out.println(info);
@@ -62,17 +57,12 @@ public class Main {
 			towers[origin]--;
 			towers[aux]++;
 			
-			info += towers[0];
-			info += towers[1];
+			info += towers[0] + " ";
+			info += towers[1] + " ";
 			info += towers[2] + "\n";
-			hanoi(k-1, aux, origin, target, towers);
-			
-		} else if(k == 0){
-			
-			/**
-			info += "\n" + "\n";
-			System.out.println("Siiiiiiiiuuuuuuuuuuu");*/
+			hanoi(k-1, target, origin, aux, towers);
 		}
+		
 	}
 	
 }
